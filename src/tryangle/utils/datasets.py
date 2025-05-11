@@ -36,7 +36,7 @@ def load_sample(key, *args, **kwargs):
         columns=columns,
         cumulative=True,
         *args,
-        **kwargs
+        **kwargs,
     )
     sample_weight = Triangle(
         sample_weight,
@@ -46,7 +46,7 @@ def load_sample(key, *args, **kwargs):
         columns=["premium"],
         cumulative=True,
         *args,
-        **kwargs
+        **kwargs,
     ).latest_diagonal
 
     return TryangleData(claim, sample_weight)
@@ -73,7 +73,7 @@ def load_test_sample(key, *args, **kwargs):
         columns=["claim"],
         cumulative=True,
         *args,
-        **kwargs
+        **kwargs,
     )
 
     if key.lower() in ["swiss"]:
