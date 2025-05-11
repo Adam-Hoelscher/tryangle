@@ -186,7 +186,7 @@ class AutoEnsemble(_BaseTriangleEnsemble):
                         clone(clf),
                         X,
                         X,
-                        sample_weight=None,
+                        fit_params={},
                         message_clsname=f"Preprocessing - {names[idx]}_expected",
                         message=self._log_message(names[idx], idx + 1, len(clfs)),
                     ),

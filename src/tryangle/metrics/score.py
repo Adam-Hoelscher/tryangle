@@ -3,11 +3,10 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 import numpy as np
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics._scorer import _BaseScorer
 
 from tryangle.metrics.base import get_actual_expected
-
-from sklearn.metrics._scorer import _BaseScorer
-from sklearn.metrics import mean_squared_error
 
 
 class AVEScore(_BaseScorer):
@@ -17,9 +16,13 @@ class AVEScore(_BaseScorer):
         self,
         score_func=mean_squared_error,
         sign=-1,
-        kwargs={"squared": False},
+        kwargs=None,
         weighted=False,
     ):
+
+        if kwargs is None:
+            kwargs = {}
+
         self.weighted = weighted
         super().__init__(score_func, sign, kwargs)
 
