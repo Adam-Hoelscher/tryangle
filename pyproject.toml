@@ -18,7 +18,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-    "chainladder>=0.8.24"
+    "chainladder>=0.8,<=0.8.24"
 ]
 license = { text = "MPL-2.0" }
 requires-python = ">=3.9"
@@ -27,4 +27,4 @@ requires-python = ">=3.9"
 Homepage = "https://github.com/casact/tryangle"
 
 [project.optional-dependencies]
-dev = ["ruff", "black", "mypy", "pytest", "tox", "twine"]
+dev = ["ruff", "black", "mypy", "pytest", "tox", "twine", "tox-uv"]
